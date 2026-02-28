@@ -32,10 +32,16 @@ I build high-availability, fault-tolerant backend systems that scale. My focus i
 
 ## 🏗️ What I've Built
 
-- **Multi-tenant notification platform** — schema-based PostgreSQL tenancy, horizontal scalability across 20+ tenants, 60% latency reduction on async event pipelines handling 20k+ records per cycle
-- **Real-time systems** — WebSocket-based notifications, presence detection, 1:1 and group chat with sessions and secure auth
-- **Data migration pipelines** — customizable client onboarding pipelines with schema redesign and Redis-backed caching improving DB performance by ~20%
-- **Platform libraries** — reusable CRM attachment ingestion library improving developer velocity across teams
+I gravitate toward problems where **correctness, isolation, and performance** all have to coexist — distributed systems where the easy solution doesn't scale, and the scalable solution has to be designed deliberately.
+
+**Multi-Tenant Notification Platform**  
+Architected a distributed, real-time notification system serving 20+ tenants with hard data isolation guarantees. The interesting challenge wasn't the current load — it was designing the tenancy model to never become a migration nightmare later. Schema-based PostgreSQL isolation over row-level was a deliberate tradeoff: stronger isolation, simpler queries, and independent schema evolution per tenant. Async event pipelines handle 20k+ records per cycle with concurrency controls that cut end-to-end latency by ~60%.
+
+**Real-Time Communication Systems**  
+Built WebSocket-based notification systems, presence detection, and full 1:1 / group chat from scratch — including session management, secure auth, and live state propagation. The hard part is always consistency under reconnection and failover, not the happy path.
+
+**Data Migration & Platform Engineering**  
+Designed customizable onboarding pipelines for client data migrations and built reusable platform libraries (CRM attachment ingestion) that other engineers could drop into new services without reinventing the wheel. Good platform work is invisible — it makes the people around you faster.
 
 ---
 
