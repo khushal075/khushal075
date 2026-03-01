@@ -50,8 +50,24 @@ Designed customizable onboarding pipelines for client data migrations and built 
 ### [fast_multi_tenant](https://github.com/khushal075/fast_multi_tenant)
 Production-grade multi-tenant SaaS scaffold with schema-based PostgreSQL isolation, Redis rate limiting, circuit breakers, and Prometheus/Grafana observability. Built with FastAPI + SQLAlchemy 2.0.
 
+---
+
 ### [presence_service](https://github.com/khushal075/presence_service)
-Real-time presence detection service — tracks online/offline state, session management, and live updates via WebSockets.
+
+[![CI](https://github.com/khushal075/presence_service/actions/workflows/ci.yml/badge.svg)](https://github.com/khushal075/presence_service/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/khushal075/presence_service/branch/main/graph/badge.svg)](https://codecov.io/gh/khushal075/presence_service)
+![Python](https://img.shields.io/badge/python-3.12-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.128-green)
+![Redis](https://img.shields.io/badge/Redis-7-red)
+
+Distributed real-time presence engine — tracks online/offline state across horizontally scaled nodes via Redis Pub/Sub, with WebSocket fan-out, heartbeat TTL-based session cleanup, and a full CI pipeline with 75%+ test coverage.
+
+- 🔁 Cross-node sync via Redis Pub/Sub — no direct server-to-server communication
+- 💓 Heartbeat TTL system — stale sessions auto-evicted without relying on TCP disconnect events  
+- ⚡ `asyncio.gather` fan-out — presence changes pushed to all local WebSocket clients concurrently
+- 🧪 30 tests · 75%+ coverage · GitHub Actions CI on every push
+
+---
 
 ### [crewos](https://github.com/khushal075/crewos)
 Crew and team orchestration service built on event-driven patterns.
