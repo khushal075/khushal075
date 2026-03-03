@@ -48,7 +48,20 @@ Designed customizable onboarding pipelines for client data migrations and built 
 ## 📌 Featured Projects
 
 ### [fast_multi_tenant](https://github.com/khushal075/fast_multi_tenant)
-Production-grade multi-tenant SaaS scaffold with schema-based PostgreSQL isolation, Redis rate limiting, circuit breakers, and Prometheus/Grafana observability. Built with FastAPI + SQLAlchemy 2.0.
+
+[![CI](https://github.com/khushal075/fast_multi_tenant/actions/workflows/ci.yml/badge.svg)](https://github.com/khushal075/fast_multi_tenant/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/khushal075/fast_multi_tenant/branch/main/graph/badge.svg)](https://codecov.io/gh/khushal075/fast_multi_tenant)
+![Python](https://img.shields.io/badge/python-3.12-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.128-green)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-316192?logo=postgresql&logoColor=white)
+
+Production-grade multi-tenant SaaS scaffold with row-level PostgreSQL isolation, async SQLAlchemy 2.0, and a full tenant provisioning API — designed so the tenancy model never becomes a migration nightmare.
+
+- 🏢 Row-level isolation via `TenantMixin` — `tenant_id` UUID injected automatically on every scoped model
+- 🔒 `TenantMiddleware` validates `X-Tenant-ID` on every request — 400 on missing, 403 on inactive/unknown tenant
+- ⚡ Fully async FastAPI + psycopg3 — sync engine isolated to middleware via `run_in_executor` to never block the event loop
+- 🔄 `ContextVar`-based tenant context — safe for async request handling, no thread-local leakage
+- 🧪 31 tests · Postgres-backed with rollback isolation · GitHub Actions CI on every push
 
 ---
 
