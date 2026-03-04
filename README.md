@@ -76,14 +76,30 @@ Production-grade multi-tenant SaaS scaffold with row-level PostgreSQL isolation,
 Distributed real-time presence engine — tracks online/offline state across horizontally scaled nodes via Redis Pub/Sub, with WebSocket fan-out, heartbeat TTL-based session cleanup, and a full CI pipeline with 75%+ test coverage.
 
 - 🔁 Cross-node sync via Redis Pub/Sub — no direct server-to-server communication
-- 💓 Heartbeat TTL system — stale sessions auto-evicted without relying on TCP disconnect events  
+- 💓 Heartbeat TTL system — stale sessions auto-evicted without relying on TCP disconnect events
 - ⚡ `asyncio.gather` fan-out — presence changes pushed to all local WebSocket clients concurrently
 - 🧪 30 tests · 75%+ coverage · GitHub Actions CI on every push
 
 ---
 
 ### [crewos](https://github.com/khushal075/crewos)
-Crew and team orchestration service built on event-driven patterns.
+
+[![CI](https://github.com/khushal075/crewos/actions/workflows/ci.yml/badge.svg)](https://github.com/khushal075/crewos/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/khushal075/crewos/branch/main/graph/badge.svg)](https://codecov.io/gh/khushal075/crewos)
+![Python](https://img.shields.io/badge/python-3.11-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.110-green)
+![Celery](https://img.shields.io/badge/Celery-5-37814A?logo=celery&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-7-DC382D?logo=redis&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-native-326CE5?logo=kubernetes&logoColor=white)
+
+Multi-tenant multi-agent orchestration service built on crewAI — runs AI agent crews as async Celery tasks with clean architecture, local LLM inference via Ollama, and Kubernetes-native deployment with per-tenant worker queues.
+
+- 🤖 crewAI-powered agent execution — `Agent`, `Crew`, `Task` domain entities with factory pattern and pluggable LLM adapters
+- 🏗️ Clean architecture — domain, application (use cases + DTOs), infrastructure, and API layers fully decoupled
+- ⚙️ Per-tenant Celery queues — each crew run dispatched to `crewai.<tenant_id>` so dedicated k8s workers pick it up
+- 🧠 Redis-backed agent memory — shared state across agents within a crew run
+- 🏢 `ContextVar`-based tenant isolation — every crew execution scoped to `tenant_id`, safe under async concurrency
+- 🧪 65+ tests · 70%+ coverage · GitHub Actions CI on every push
 
 ---
 
