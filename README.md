@@ -103,7 +103,7 @@ Multi-tenant multi-agent orchestration service built on crewAI — runs AI agent
 
 ---
 
-### [streamlens](https://github.com/khushal075/streamlens)
+### [streamlens](https://github.com/khushal075/streamlens) | [ingestion-service](https://github.com/khushal075/streamlens/tree/main/ingestion-service)
 
 [![Ingestion CI](https://github.com/khushal075/streamlens/actions/workflows/ingestion-ci.yml/badge.svg)](https://github.com/khushal075/streamlens/actions/workflows/ingestion-ci.yml)
 [![Coverage](https://img.shields.io/badge/Coverage-81%25-success)](https://github.com/khushal075/streamlens)
@@ -114,11 +114,11 @@ Multi-tenant multi-agent orchestration service built on crewAI — runs AI agent
 
 A distributed, high-throughput log ingestion and analytical platform. StreamLens utilizes a decoupled architecture to bridge the gap between volatile application logs and structured analytical storage.
 
-- 📥 **Durable Ingestion Layer** — FastAPI + Redis buffer allows for immediate `202 Accepted` responses, shielding upstream services from database latency.
-- 🔄 **Reliable Relay Pattern** — Custom Kafka workers implement the Strategy Pattern for log enrichment (K8s, Docker, Syslog) with guaranteed "at-least-once" delivery.
-- ⚡ **OLAP Optimization** — Engineered for ClickHouse with aggressive batch-insertion logic, enabling sub-second analytical queries across massive datasets.
-- 🧊 **Columnar Archival** — Automated cold-storage pipeline converting log streams into Snappy-compressed Parquet files for S3.
-- 🧪 **High Reliability** — 81% test coverage with automated CI/CD and rigorous mocking of distributed components.
+- 📥 **Durable Ingestion Layer** — FastAPI + Redis buffer allows for immediate `202 Accepted` responses, shielding upstream services from database latency and managing backpressure during traffic spikes.
+- 🔄 **Reliable Relay Pattern** — Custom Kafka workers implement the **Strategy Pattern** for log enrichment (K8s, Docker, Syslog) with strict "at-least-once" delivery guarantees.
+- ⚡ **OLAP Optimization** — Engineered for **ClickHouse** with aggressive batch-insertion logic, enabling sub-second analytical queries across massive, real-time datasets.
+- 🧊 **Columnar Archival** — Automated cold-storage pipeline converting high-frequency log streams into Snappy-compressed **Parquet** files for cost-effective S3 storage.
+- 🧪 **High Reliability** — The Ingestion core maintains **81% test coverage** with automated CI/CD and rigorous mocking of distributed components to validate system behavior under simulated partial failures and network partitions.
 
 ---
 
