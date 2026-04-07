@@ -103,6 +103,25 @@ Multi-tenant multi-agent orchestration service built on crewAI — runs AI agent
 
 ---
 
+### [streamlens](https://github.com/khushal075/streamlens)
+
+[![Ingestion CI](https://github.com/khushal075/streamlens/actions/workflows/ingestion-ci.yml/badge.svg)](https://github.com/khushal075/streamlens/actions/workflows/ingestion-ci.yml)
+[![Coverage](https://img.shields.io/badge/Coverage-81%25-success)](https://github.com/khushal075/streamlens)
+![Python](https://img.shields.io/badge/python-3.11-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.111-green)
+![Kafka](https://img.shields.io/badge/Kafka-2.8-black?logo=apache-kafka)
+![ClickHouse](https://img.shields.io/badge/ClickHouse-24.3-FFCC00?logo=clickhouse&logoColor=black)
+
+A distributed, high-throughput log ingestion and analytical platform. StreamLens utilizes a decoupled architecture to bridge the gap between volatile application logs and structured analytical storage.
+
+- 📥 **Durable Ingestion Layer** — FastAPI + Redis buffer allows for immediate `202 Accepted` responses, shielding upstream services from database latency.
+- 🔄 **Reliable Relay Pattern** — Custom Kafka workers implement the Strategy Pattern for log enrichment (K8s, Docker, Syslog) with guaranteed "at-least-once" delivery.
+- ⚡ **OLAP Optimization** — Engineered for ClickHouse with aggressive batch-insertion logic, enabling sub-second analytical queries across massive datasets.
+- 🧊 **Columnar Archival** — Automated cold-storage pipeline converting log streams into Snappy-compressed Parquet files for S3.
+- 🧪 **High Reliability** — 81% test coverage with automated CI/CD and rigorous mocking of distributed components.
+
+---
+
 ## 🎓 Education
 
 **M.Tech — IIT Kanpur** (2012–2015)  
