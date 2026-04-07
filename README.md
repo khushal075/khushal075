@@ -106,7 +106,7 @@ Multi-tenant multi-agent orchestration service built on crewAI — runs AI agent
 ### [streamlens](https://github.com/khushal075/streamlens) | [ingestion-service](https://github.com/khushal075/streamlens/tree/main/ingestion-service)
 
 [![Ingestion CI](https://github.com/khushal075/streamlens/actions/workflows/ingestion-ci.yml/badge.svg)](https://github.com/khushal075/streamlens/actions/workflows/ingestion-ci.yml)
-[![Coverage](https://img.shields.io/badge/Coverage-81%25-success)](https://github.com/khushal075/streamlens)
+[![Coverage](https://img.shields.io/badge/Coverage-81%25-success)](https://app.codecov.io/gh/khushal075/streamlens)
 ![Python](https://img.shields.io/badge/python-3.11-blue)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.111-green)
 ![Kafka](https://img.shields.io/badge/Kafka-2.8-black?logo=apache-kafka)
@@ -114,11 +114,11 @@ Multi-tenant multi-agent orchestration service built on crewAI — runs AI agent
 
 A distributed, high-throughput log ingestion and analytical platform. StreamLens utilizes a decoupled architecture to bridge the gap between volatile application logs and structured analytical storage.
 
-- 📥 **Durable Ingestion Layer** — FastAPI + Redis buffer allows for immediate `202 Accepted` responses, shielding upstream services from database latency and managing backpressure during traffic spikes.
-- 🔄 **Reliable Relay Pattern** — Custom Kafka workers implement the **Strategy Pattern** for log enrichment (K8s, Docker, Syslog) with strict "at-least-once" delivery guarantees.
-- ⚡ **OLAP Optimization** — Engineered for **ClickHouse** with aggressive batch-insertion logic, enabling sub-second analytical queries across massive, real-time datasets.
-- 🧊 **Columnar Archival** — Automated cold-storage pipeline converting high-frequency log streams into Snappy-compressed **Parquet** files for cost-effective S3 storage.
-- 🧪 **High Reliability** — The Ingestion core maintains **81% test coverage** with automated CI/CD and rigorous mocking of distributed components to validate system behavior under simulated partial failures and network partitions.
+- 📥 **Durable Ingestion Layer** — Architected a FastAPI entry point with a **Redis Write-Ahead Buffer** to provide immediate `202 Accepted` responses, effectively shielding upstream services from database backpressure and ingestion spikes.
+- 🔄 **Reliable Relay Pattern** — Implemented specialized Kafka Workers using the **Strategy Pattern** for multi-source log enrichment (K8s, Docker, Syslog) while maintaining strict **"at-least-once"** delivery semantics.
+- ⚡ **OLAP Optimization** — Engineered high-performance persistence into **ClickHouse** using optimized batch-insertion logic, enabling sub-second analytical queries over massive, real-time datasets.
+- 🧊 **Columnar Archival** — Automated cold-storage pipeline converting high-frequency log streams into Snappy-compressed **Parquet** files for cost-effective, long-term retention on S3.
+- 🧪 **High Reliability Core** — The Ingestion microservice maintains **81% test coverage** with automated CI/CD and rigorous mocking of distributed drivers to validate system resilience under simulated **network partitions** and partial failures.
 
 ---
 
