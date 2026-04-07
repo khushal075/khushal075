@@ -110,7 +110,10 @@ A distributed log observability platform designed to bridge the gap between vola
 #### 🏗️ Platform Ecosystem
 ![Kafka](https://img.shields.io/badge/Kafka-2.8-black?logo=apache-kafka)
 ![ClickHouse](https://img.shields.io/badge/ClickHouse-24.3-FFCC00?logo=clickhouse&logoColor=black)
+![Redis](https://img.shields.io/badge/Redis-7.0-DC382D?logo=redis&logoColor=white)
 ![S3](https://img.shields.io/badge/Storage-S3_Parquet-orange?logo=amazons3)
+![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED?logo=docker&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/CI/CD-GitHub_Actions-2088FF?logo=github-actions&logoColor=white)
 
 * 🔄 **Decoupled Data Pipeline**: Orchestrates the flow from raw ingestion to OLAP storage, ensuring zero data loss during high-burst traffic.
 * ⚡ **Analytical Storage Engine**: Optimized **ClickHouse** persistence via aggressive batch-insertion logic, enabling sub-second analytical queries over billion-row datasets.
