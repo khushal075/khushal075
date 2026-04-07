@@ -112,9 +112,9 @@ A distributed log observability platform designed to bridge the gap between vola
 ![ClickHouse](https://img.shields.io/badge/ClickHouse-24.3-FFCC00?logo=clickhouse&logoColor=black)
 ![S3](https://img.shields.io/badge/Storage-S3_Parquet-orange?logo=amazons3)
 
-* **Decoupled Data Pipeline**: Orchestrates the flow from raw ingestion to OLAP storage, ensuring zero data loss during high-burst traffic.
-* **Analytical Storage Engine**: Optimized **ClickHouse** persistence via aggressive batch-insertion logic, enabling sub-second analytical queries over billion-row datasets.
-* **Columnar Archival**: Automated cold-storage pipeline converting high-velocity streams into Snappy-compressed **Parquet** files for cost-effective S3 retention.
+* 🔄 **Decoupled Data Pipeline**: Orchestrates the flow from raw ingestion to OLAP storage, ensuring zero data loss during high-burst traffic.
+* ⚡ **Analytical Storage Engine**: Optimized **ClickHouse** persistence via aggressive batch-insertion logic, enabling sub-second analytical queries over billion-row datasets.
+* 🧊 **Columnar Archival**: Automated cold-storage pipeline converting high-velocity streams into Snappy-compressed **Parquet** files for cost-effective S3 retention.
 
 #### 🔌 [ingestion-service](https://github.com/khushal075/streamlens/tree/main/ingestion-service)
 [![Ingestion CI](https://github.com/khushal075/streamlens/actions/workflows/ingestion-ci.yml/badge.svg)](https://github.com/khushal075/streamlens/actions/workflows/ingestion-ci.yml)
@@ -123,9 +123,9 @@ A distributed log observability platform designed to bridge the gap between vola
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.111-green)
 ![Redis](https://img.shields.io/badge/Redis-7-DC382D?logo=redis&logoColor=white)
 
-* **Durable Ingestion Layer**: A FastAPI entry point utilizing a **Redis Write-Ahead Buffer** to provide immediate `202 Accepted` responses, shielding upstream services from database backpressure.
-* **Reliable Relay Pattern**: Custom Kafka Workers implementing the **Strategy Pattern** for context-aware log enrichment (K8s, Docker, Syslog) with strict **"at-least-once"** delivery semantics.
-* **Fault Tolerance**: Maintains **81% test coverage** with a CI/CD pipeline that mocks distributed drivers to validate resilience against **network partitions** and partial system failures.
+* 📥 **Durable Ingestion Layer**: A FastAPI entry point utilizing a **Redis Write-Ahead Buffer** to provide immediate `202 Accepted` responses, shielding upstream services from database backpressure.
+* 🤖 **Reliable Relay Pattern**: Custom Kafka Workers implementing the **Strategy Pattern** for context-aware log enrichment (K8s, Docker, Syslog) with strict **"at-least-once"** delivery semantics.
+* 🛡️ **Fault Tolerance**: Maintains **81% test coverage** with a CI/CD pipeline that mocks distributed drivers to validate resilience against **network partitions** and partial system failures.
 
 ---
 
