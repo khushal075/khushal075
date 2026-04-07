@@ -118,9 +118,10 @@ A distributed log observability platform designed to bridge the gap between vola
 
 #### 🔌 [ingestion-service](https://github.com/khushal075/streamlens/tree/main/ingestion-service)
 [![Ingestion CI](https://github.com/khushal075/streamlens/actions/workflows/ingestion-ci.yml/badge.svg)](https://github.com/khushal075/streamlens/actions/workflows/ingestion-ci.yml)
-[![Coverage](https://img.shields.io/badge/Coverage-81%25-success)](https://app.codecov.io/gh/khushal075/streamlens)
+[![codecov](https://codecov.io/gh/khushal075/crewos/branch/main/graph/badge.svg)](https://app.codecov.io/gh/khushal075/streamlens)
 ![Python](https://img.shields.io/badge/python-3.11-blue)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.111-green)
+![Redis](https://img.shields.io/badge/Redis-7-DC382D?logo=redis&logoColor=white)
 
 * **Durable Ingestion Layer**: A FastAPI entry point utilizing a **Redis Write-Ahead Buffer** to provide immediate `202 Accepted` responses, shielding upstream services from database backpressure.
 * **Reliable Relay Pattern**: Custom Kafka Workers implementing the **Strategy Pattern** for context-aware log enrichment (K8s, Docker, Syslog) with strict **"at-least-once"** delivery semantics.
