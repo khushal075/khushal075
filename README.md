@@ -3,10 +3,10 @@
 </a>
 
 <p align="center">
-  <a href="https://khushal075.github.io/"><strong>Explore my portfolio ↗</strong></a> &nbsp; · &nbsp;
-  <a href="https://khushal075.github.io/blog/">Architecture notes</a> &nbsp; · &nbsp;
-  <a href="https://khushal075.github.io/#playground">Interactive playground</a> &nbsp; · &nbsp;
-  <a href="https://linkedin.com/in/khushal108">LinkedIn</a>
+  <a href="https://khushal075.github.io/"><img src="assets/icons/portfolio.svg" width="18" height="18" alt="" /> &nbsp;<strong>Explore my portfolio ↗</strong></a> &nbsp; · &nbsp;
+  <a href="https://khushal075.github.io/blog/"><img src="assets/icons/notes.svg" width="18" height="18" alt="" /> &nbsp;Architecture notes</a> &nbsp; · &nbsp;
+  <a href="https://khushal075.github.io/#playground"><img src="assets/icons/playground.svg" width="18" height="18" alt="" /> &nbsp;Interactive playground</a> &nbsp; · &nbsp;
+  <a href="https://linkedin.com/in/khushal108"><img src="assets/icons/linkedin.svg" width="18" height="18" alt="" /> &nbsp;LinkedIn</a>
 </p>
 
 ## Business intent → architecture decisions → working evidence
