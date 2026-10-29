@@ -1,149 +1,76 @@
-# Hi, I'm Khushal 👋
+<a href="https://khushal075.github.io/">
+  <img src="assets/architecture-banner.svg" width="100%" alt="Khushal — Enterprise architecture and applied AI. Connecting business goals, architecture decisions, and working systems." />
+</a>
 
-**Staff-level Backend Engineer** · Distributed Systems · Multi-Tenant SaaS · Event-Driven Architecture
+<p align="center">
+  <a href="https://khushal075.github.io/"><strong>Explore my portfolio ↗</strong></a> &nbsp; · &nbsp;
+  <a href="https://khushal075.github.io/blog/">Architecture notes</a> &nbsp; · &nbsp;
+  <a href="https://khushal075.github.io/#playground">Interactive playground</a> &nbsp; · &nbsp;
+  <a href="https://linkedin.com/in/khushal108">LinkedIn</a>
+</p>
 
-I build high-availability, fault-tolerant backend systems that scale. My focus is on system design, real-time communication, and cloud-native infrastructure — with 7+ years of production ownership across Python and Java stacks.
+## Business intent → architecture decisions → working evidence
 
----
+I connect business priorities with **enterprise architecture and applied AI**: defining system boundaries, making tradeoffs explicit, and validating decisions in working software.
 
-## 🔧 What I Work With
+My foundation is **7+ years of production ownership across Python and Java**, spanning distributed backends, multi-tenant platforms, and real-time communication. Here I share the code and reasoning behind those decisions.
 
-**Languages & Frameworks**  
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=flat&logo=openjdk&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white)
-![Django](https://img.shields.io/badge/Django-092E20?style=flat&logo=django&logoColor=white)
-![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat&logo=spring-boot&logoColor=white)
+| The question I start with | What I make explicit |
+| :--- | :--- |
+| What are we promising the customer? | Service boundaries, recovery expectations, and cost to serve |
+| What stays shared? | Tenant scope, resource contention, and failure domains |
+| Where does AI add value? | Workflow boundaries, model integration, and execution controls |
 
-**Data & Messaging**  
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=flat&logo=postgresql&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat&logo=redis&logoColor=white)
-![Snowflake](https://img.shields.io/badge/Snowflake-29B5E8?style=flat&logo=snowflake&logoColor=white)
+## Explore the systems
 
-**Infrastructure & Observability**  
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazon-aws&logoColor=white)
-![GCP](https://img.shields.io/badge/GCP-4285F4?style=flat&logo=google-cloud&logoColor=white)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat&logo=kubernetes&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
-![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=flat&logo=prometheus&logoColor=white)
-![Grafana](https://img.shields.io/badge/Grafana-F46800?style=flat&logo=grafana&logoColor=white)
+<a href="https://github.com/khushal075/fast_multi_tenant"><img src="assets/tenancy.svg" width="49%" alt="fast_multi_tenant: FastAPI scaffold exploring tenant context and PostgreSQL row-level data separation. Open repository." /></a>
+<a href="https://github.com/khushal075/presence_service"><img src="assets/presence.svg" width="49%" alt="presence_service: distributed presence with WebSockets and Redis. Open repository." /></a>
+<br />
+<a href="https://github.com/khushal075/crewos"><img src="assets/ai.svg" width="49%" alt="CrewOS: two-step LLM workflows with tenant-aware asynchronous execution. Open repository." /></a>
+<a href="https://github.com/khushal075/streamlens"><img src="assets/observability.svg" width="49%" alt="StreamLens: a decoupled log-ingestion and observability pipeline. Open repository." /></a>
 
----
+**Want to interact with a system?** [Disconnect a simulated node and watch presence state change in the playground →](https://khushal075.github.io/#playground)
 
-## 🏗️ What I've Built
+## Latest architecture notes
 
-I gravitate toward problems where **correctness, isolation, and performance** all have to coexist — distributed systems where the easy solution doesn't scale, and the scalable solution has to be designed deliberately.
+<!-- BLOG:START -->
+- [Efficient agents need a workflow, not just a stronger model](https://khushal075.github.io/blog/efficient-agents-need-a-workflow/)
+- [An AI workflow needs execution boundaries](https://khushal075.github.io/blog/ai-execution-needs-boundaries/)
+- [When a connection disappears, when is a user offline?](https://khushal075.github.io/blog/presence-is-a-decision/)
+- [Tenant isolation is a business decision](https://khushal075.github.io/blog/tenant-isolation-is-a-business-decision/)
+<!-- BLOG:END -->
 
-**Multi-Tenant Notification Platform**  
-Architected a distributed, real-time notification system serving 20+ tenants with hard data isolation guarantees. The interesting challenge wasn't the current load — it was designing the tenancy model to never become a migration nightmare later. Schema-based PostgreSQL isolation over row-level was a deliberate tradeoff: stronger isolation, simpler queries, and independent schema evolution per tenant. Async event pipelines handle 20k+ records per cycle with concurrency controls that cut end-to-end latency by ~60%.
+[All articles →](https://khushal075.github.io/blog/) · [Subscribe via RSS](https://khushal075.github.io/rss.xml)
 
-**Real-Time Communication Systems**  
-Built WebSocket-based notification systems, presence detection, and full 1:1 / group chat from scratch — including session management, secure auth, and live state propagation. The hard part is always consistency under reconnection and failover, not the happy path.
+<sub>This reading list refreshes daily from my blog.</sub>
 
-**Data Migration & Platform Engineering**  
-Designed customizable onboarding pipelines for client data migrations and built reusable platform libraries (CRM attachment ingestion) that other engineers could drop into new services without reinventing the wheel. Good platform work is invisible — it makes the people around you faster.
+<details>
+<summary><strong>Applied AI: what CrewOS demonstrates today</strong></summary>
 
----
+CrewOS currently executes a **fixed two-step LLM workflow** with tenant authentication, task-ownership checks, tenant-specific Celery routing, bounded inference retries, and an OpenAI-compatible model adapter. Ollama is a local inference option.
 
-## 📌 Featured Projects
+Tool-using agent loops, persistent memory, durable checkpoints, approvals, and multi-agent evaluation are planned. The architecture articles discuss broader patterns separately from implemented project capabilities.
 
-### [fast_multi_tenant](https://github.com/khushal075/fast_multi_tenant)
+[Inspect the implementation →](https://github.com/khushal075/crewos)
 
-[![CI](https://github.com/khushal075/fast_multi_tenant/actions/workflows/ci.yml/badge.svg)](https://github.com/khushal075/fast_multi_tenant/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/khushal075/fast_multi_tenant/branch/main/graph/badge.svg)](https://codecov.io/gh/khushal075/fast_multi_tenant)
-![Python](https://img.shields.io/badge/python-3.12-blue)
-![FastAPI](https://img.shields.io/badge/FastAPI-0.128-green)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-316192?logo=postgresql&logoColor=white)
+</details>
 
-Production-grade multi-tenant SaaS scaffold with row-level PostgreSQL isolation, async SQLAlchemy 2.0, and a full tenant provisioning API — designed so the tenancy model never becomes a migration nightmare.
+<details>
+<summary><strong>Production experience, toolkit, and education</strong></summary>
 
-- 🏢 Row-level isolation via `TenantMixin` — `tenant_id` UUID injected automatically on every scoped model
-- 🔒 `TenantMiddleware` validates `X-Tenant-ID` on every request — 400 on missing, 403 on inactive/unknown tenant
-- ⚡ Fully async FastAPI + psycopg3 — sync engine isolated to middleware via `run_in_executor` to never block the event loop
-- 🔄 `ContextVar`-based tenant context — safe for async request handling, no thread-local leakage
-- 🧪 31 tests · Postgres-backed with rollback isolation · GitHub Actions CI on every push
+My work includes multi-tenant notification platforms, WebSocket communication and presence systems, client data-migration pipelines, and reusable platform libraries.
 
----
-
-### [presence_service](https://github.com/khushal075/presence_service)
-
-[![CI](https://github.com/khushal075/presence_service/actions/workflows/ci.yml/badge.svg)](https://github.com/khushal075/presence_service/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/khushal075/presence_service/branch/main/graph/badge.svg)](https://codecov.io/gh/khushal075/presence_service)
-![Python](https://img.shields.io/badge/python-3.12-blue)
-![FastAPI](https://img.shields.io/badge/FastAPI-0.128-green)
-![Redis](https://img.shields.io/badge/Redis-7-red)
-
-Distributed real-time presence engine — tracks online/offline state across horizontally scaled nodes via Redis Pub/Sub, with WebSocket fan-out, heartbeat TTL-based session cleanup, and a full CI pipeline with 75%+ test coverage.
-
-- 🔁 Cross-node sync via Redis Pub/Sub — no direct server-to-server communication
-- 💓 Heartbeat TTL system — stale sessions auto-evicted without relying on TCP disconnect events
-- ⚡ `asyncio.gather` fan-out — presence changes pushed to all local WebSocket clients concurrently
-- 🧪 30 tests · 75%+ coverage · GitHub Actions CI on every push
-
----
-
-### [crewos](https://github.com/khushal075/crewos)
-
-[![CI](https://github.com/khushal075/crewos/actions/workflows/ci.yml/badge.svg)](https://github.com/khushal075/crewos/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/khushal075/crewos/branch/main/graph/badge.svg)](https://codecov.io/gh/khushal075/crewos)
-![Python](https://img.shields.io/badge/python-3.11-blue)
-![FastAPI](https://img.shields.io/badge/FastAPI-0.110-green)
-![Celery](https://img.shields.io/badge/Celery-5-37814A?logo=celery&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-7-DC382D?logo=redis&logoColor=white)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-native-326CE5?logo=kubernetes&logoColor=white)
-
-Multi-tenant multi-agent orchestration service built on crewAI — runs AI agent crews as async Celery tasks with clean architecture, local LLM inference via Ollama, and Kubernetes-native deployment with per-tenant worker queues.
-
-- 🤖 crewAI-powered agent execution — `Agent`, `Crew`, `Task` domain entities with factory pattern and pluggable LLM adapters
-- 🏗️ Clean architecture — domain, application (use cases + DTOs), infrastructure, and API layers fully decoupled
-- ⚙️ Per-tenant Celery queues — each crew run dispatched to `crewai.<tenant_id>` so dedicated k8s workers pick it up
-- 🧠 Redis-backed agent memory — shared state across agents within a crew run
-- 🏢 `ContextVar`-based tenant isolation — every crew execution scoped to `tenant_id`, safe under async concurrency
-- 🧪 65+ tests · 70%+ coverage · GitHub Actions CI on every push
-
----
-
-### [streamlens](https://github.com/khushal075/streamlens)
-
-A distributed log observability platform designed to bridge the gap between volatile application logs and high-performance analytical storage through a multi-tier, decoupled architecture.
-
-#### 🏗️ Platform Ecosystem
-![Kafka](https://img.shields.io/badge/Kafka-2.8-black?logo=apache-kafka)
-![ClickHouse](https://img.shields.io/badge/ClickHouse-24.3-FFCC00?logo=clickhouse&logoColor=black)
-![Redis](https://img.shields.io/badge/Redis-7.0-DC382D?logo=redis&logoColor=white)
-![S3](https://img.shields.io/badge/Storage-S3_Parquet-orange?logo=amazons3)
-![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED?logo=docker&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/CI/CD-GitHub_Actions-2088FF?logo=github-actions&logoColor=white)
-
-* 🔄 **Decoupled Data Pipeline**: Orchestrates the flow from raw ingestion to OLAP storage, ensuring zero data loss during high-burst traffic.
-* ⚡ **Analytical Storage Engine**: Optimized **ClickHouse** persistence via aggressive batch-insertion logic, enabling sub-second analytical queries over billion-row datasets.
-* 🧊 **Columnar Archival**: Automated cold-storage pipeline converting high-velocity streams into Snappy-compressed **Parquet** files for cost-effective S3 retention.
-
-#### 🔌 [ingestion-service](https://github.com/khushal075/streamlens/tree/main/ingestion-service)
-[![Ingestion CI](https://github.com/khushal075/streamlens/actions/workflows/ingestion-ci.yml/badge.svg)](https://github.com/khushal075/streamlens/actions/workflows/ingestion-ci.yml)
-[![codecov](https://codecov.io/gh/khushal075/crewos/branch/main/graph/badge.svg)](https://app.codecov.io/gh/khushal075/streamlens)
-![Python](https://img.shields.io/badge/python-3.11-blue)
-![FastAPI](https://img.shields.io/badge/FastAPI-0.111-green)
-![Redis](https://img.shields.io/badge/Redis-7-DC382D?logo=redis&logoColor=white)
-
-* 📥 **Durable Ingestion Layer**: A FastAPI entry point utilizing a **Redis Write-Ahead Buffer** to provide immediate `202 Accepted` responses, shielding upstream services from database backpressure.
-* 🤖 **Reliable Relay Pattern**: Custom Kafka Workers implementing the **Strategy Pattern** for context-aware log enrichment (K8s, Docker, Syslog) with strict **"at-least-once"** delivery semantics.
-* 🛡️ **Fault Tolerance**: Maintains **81% test coverage** with a CI/CD pipeline that mocks distributed drivers to validate resilience against **network partitions** and partial system failures.
-
----
-
-## 🎓 Education
+**Languages & frameworks:** Python · Java · FastAPI · Django · Spring Boot  
+**Data & messaging:** PostgreSQL · Redis · Snowflake  
+**Infrastructure:** AWS · GCP · Kubernetes · Docker · Prometheus · Grafana
 
 **M.Tech — IIT Kanpur** (2012–2015)  
 **B.Tech — Engineering College, Bikaner** (2007–2011)
 
----
-
-## 📫 Let's Connect
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/khushal108)
-[![Email](https://img.shields.io/badge/Email-D14836?style=flat&logo=gmail&logoColor=white)](mailto:khushal.jobss@gmail.com)
+</details>
 
 ---
 
-*Currently open to Staff Engineer and Tech Lead opportunities in the backend/distributed systems space.*
+**Let’s connect:** [LinkedIn](https://linkedin.com/in/khushal108) · [Email](mailto:khushal.jobss@gmail.com) · [Portfolio](https://khushal075.github.io/)
+
+Open to conversations about enterprise architecture, Staff Engineer, and technical leadership opportunities.
