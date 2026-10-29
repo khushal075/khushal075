@@ -43,7 +43,7 @@ My foundation is **7+ years of production ownership across Python and Java**, sp
 - [Tenant isolation is a business decision](https://khushal075.github.io/blog/tenant-isolation-is-a-business-decision/)
 <!-- BLOG:END -->
 
-[All articles →](https://khushal075.github.io/blog/) · [Subscribe via RSS](https://khushal075.github.io/rss.xml)
+[All articles →](https://khushal075.github.io/blog/) · [Subscribe via RSS](https://khushal075.github.io/subscribe/)
 
 <sub>This reading list refreshes daily from my blog.</sub>
 
