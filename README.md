@@ -3,10 +3,13 @@
 </a>
 
 <p align="center">
-  <a href="https://khushal075.github.io/"><img src="assets/icons/portfolio.svg" width="18" height="18" alt="" /> &nbsp;<strong>Explore my portfolio ↗</strong></a> &nbsp; · &nbsp;
-  <a href="https://khushal075.github.io/blog/"><img src="assets/icons/notes.svg" width="18" height="18" alt="" /> &nbsp;Architecture notes</a> &nbsp; · &nbsp;
-  <a href="https://khushal075.github.io/#playground"><img src="assets/icons/playground.svg" width="18" height="18" alt="" /> &nbsp;Interactive playground</a> &nbsp; · &nbsp;
-  <a href="https://linkedin.com/in/khushal108"><img src="assets/icons/linkedin.svg" width="18" height="18" alt="" /> &nbsp;LinkedIn</a>
+  <a href="https://khushal075.github.io/"><img src="assets/buttons/portfolio.svg" width="195" height="44" alt="Explore my portfolio" /></a>
+  &nbsp;
+  <a href="https://khushal075.github.io/blog/"><img src="assets/buttons/notes.svg" width="185" height="44" alt="Architecture notes" /></a>
+  &nbsp;
+  <a href="https://khushal075.github.io/#playground"><img src="assets/buttons/playground.svg" width="220" height="44" alt="Interactive playground" /></a>
+  &nbsp;
+  <a href="https://linkedin.com/in/khushal108"><img src="assets/buttons/linkedin.svg" width="130" height="44" alt="LinkedIn" /></a>
 </p>
 
 ## Business intent → architecture decisions → working evidence
