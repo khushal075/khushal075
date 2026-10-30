@@ -7,7 +7,7 @@
   &nbsp;
   <a href="https://khushal075.github.io/blog/"><img src="assets/buttons/notes.svg" width="185" height="44" alt="Architecture notes" /></a>
   &nbsp;
-  <a href="https://khushal075.github.io/#playground"><img src="assets/buttons/playground.svg" width="220" height="44" alt="Interactive playground" /></a>
+  <a href="https://khushal075.github.io/playground/"><img src="assets/buttons/playground.svg" width="220" height="44" alt="Interactive playground" /></a>
   &nbsp;
   <a href="https://linkedin.com/in/khushal108"><img src="assets/buttons/linkedin.svg" width="130" height="44" alt="LinkedIn" /></a>
 </p>
@@ -32,7 +32,7 @@ My foundation is **7+ years of production ownership across Python and Java**, sp
 <a href="https://github.com/khushal075/crewos"><img src="assets/ai.svg" width="49%" alt="CrewOS: two-step LLM workflows with tenant-aware asynchronous execution. Open repository." /></a>
 <a href="https://github.com/khushal075/streamlens"><img src="assets/observability.svg" width="49%" alt="StreamLens: a decoupled log-ingestion and observability pipeline. Open repository." /></a>
 
-**Want to interact with a system?** [Disconnect a simulated node and watch presence state change in the playground →](https://khushal075.github.io/#playground)
+**Want to interact with a system?** [Disconnect a simulated node and watch presence state change in the playground →](https://khushal075.github.io/playground/)
 
 ## Latest architecture notes
 
