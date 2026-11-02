@@ -37,10 +37,10 @@ My foundation is **7+ years of production ownership across Python and Java**, sp
 ## Latest architecture notes
 
 <!-- BLOG:START -->
+- [Applied AI: what it is, what to learn, and where it leads](https://khushal075.github.io/blog/applied-ai-from-experiments-to-reliable-systems/)
 - [Efficient agents need a workflow, not just a stronger model](https://khushal075.github.io/blog/efficient-agents-need-a-workflow/)
 - [An AI workflow needs execution boundaries](https://khushal075.github.io/blog/ai-execution-needs-boundaries/)
 - [When a connection disappears, when is a user offline?](https://khushal075.github.io/blog/presence-is-a-decision/)
-- [Tenant isolation is a business decision](https://khushal075.github.io/blog/tenant-isolation-is-a-business-decision/)
 <!-- BLOG:END -->
 
 [All articles →](https://khushal075.github.io/blog/) · [Subscribe via RSS](https://khushal075.github.io/subscribe/)
